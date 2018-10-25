@@ -1,0 +1,5 @@
+D:\Mentoring\FileSystemVisitor\FileSystemVisitor\bin\Debug\FileSystemVisitor.dll
+D:\Mentoring\FileSystemVisitor\FileSystemVisitor\bin\Debug\FileSystemVisitor.pdb
+D:\Mentoring\FileSystemVisitor\FileSystemVisitor\obj\Debug\Project.csprojResolveAssemblyReference.cache
+D:\Mentoring\FileSystemVisitor\FileSystemVisitor\obj\Debug\FileSystemVisitor.dll
+D:\Mentoring\FileSystemVisitor\FileSystemVisitor\obj\Debug\FileSystemVisitor.pdb

@@ -1,0 +1,8 @@
+D:\Mentoring\FileSystemVisitor\Tests\bin\Debug\Tests.dll
+D:\Mentoring\FileSystemVisitor\Tests\bin\Debug\Tests.pdb
+D:\Mentoring\FileSystemVisitor\Tests\bin\Debug\FileSystemVisitor.dll
+D:\Mentoring\FileSystemVisitor\Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\Mentoring\FileSystemVisitor\Tests\bin\Debug\FileSystemVisitor.pdb
+D:\Mentoring\FileSystemVisitor\Tests\obj\Debug\Tests.csprojResolveAssemblyReference.cache
+D:\Mentoring\FileSystemVisitor\Tests\obj\Debug\Tests.dll
+D:\Mentoring\FileSystemVisitor\Tests\obj\Debug\Tests.pdb
