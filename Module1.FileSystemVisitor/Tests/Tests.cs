@@ -11,37 +11,13 @@ namespace Tests
     [TestClass]
     public class Tests
     {
-        public string CurrentDirectory
-        {
-            get
-            {
-                return Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
-            }
-        }
+        public string CurrentDirectory => Directory.GetParent(Directory.GetCurrentDirectory()).FullName;
 
-        public List<string> AllDirectoriesElementsList
-        {
-            get
-            {
-                return Directory.GetFileSystemEntries(CurrentDirectory, "*", SearchOption.AllDirectories).ToList();
-            }
-        }
+        public List<string> AllDirectoriesElementsList => Directory.GetFileSystemEntries(CurrentDirectory, "*", SearchOption.AllDirectories).ToList();
 
-        public List<string> TopDirectoryElementsList
-        {
-            get
-            {
-                return Directory.GetFileSystemEntries(CurrentDirectory, "*", SearchOption.TopDirectoryOnly).ToList();
-            }
-        }
+        public List<string> TopDirectoryElementsList => Directory.GetFileSystemEntries(CurrentDirectory, "*", SearchOption.TopDirectoryOnly).ToList();
 
-        public Regex FilePattern
-        {
-            get
-            {
-                return new Regex(@"^.*\.*");
-            }
-        }
+        public Regex FilePattern => new Regex(@"^.*\.*");
 
 
         [TestMethod]

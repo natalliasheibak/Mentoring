@@ -9,7 +9,7 @@ namespace Project
 {
     public class FileSystemVisitor
     {
-        private Func<FileSystemInfo, bool> _func;
+        private Func<FileSystemInfo, bool> _filterFileFunc = (x) => true;
 
         private bool _isSearchComplete = false;
 
@@ -21,22 +21,21 @@ namespace Project
 
         public event EventHandler<FileFoundEventArgs> FileFound;
 
-        public event EventHandler<FileFoundEventArgs> DirectoryFound;
+        public event EventHandler<DirectoryFoundEventArgs> DirectoryFound;
 
         public event EventHandler<FileFoundEventArgs> FilteredFileFound;
 
-        public event EventHandler<FileFoundEventArgs> FilteredDirectoryFound;
+        public event EventHandler<DirectoryFoundEventArgs> FilteredDirectoryFound;
 
         #region Constructors
 
         public FileSystemVisitor()
         {
-            _func = (x) => true;
         }
 
         public FileSystemVisitor(Func<FileSystemInfo, bool> func)
         {
-            _func = func;
+            _filterFileFunc = func;
         }
 
         #endregion
@@ -60,7 +59,7 @@ namespace Project
             {
                 OnFileFound(this, new FileFoundEventArgs("File found.", file.FullName));
 
-                if (_func(file))
+                if (_filterFileFunc(file))
                 {
                     OnFilteredFileFound(this, new FileFoundEventArgs("Filtered file found.", file.FullName));
 
@@ -80,10 +79,10 @@ namespace Project
 
             foreach (var directory in directoryInfo.GetDirectories())
             {
-                OnDirectoryFound(this, new FileFoundEventArgs("Directory found.", directory.FullName));
-                if (_func(directory))
+                OnDirectoryFound(this, new DirectoryFoundEventArgs("Directory found.", directory.FullName));
+                if (_filterFileFunc(directory))
                 {
-                    OnFilteredDirectoryFound(this, new FileFoundEventArgs("Directory found.", directory.FullName));
+                    OnFilteredDirectoryFound(this, new DirectoryFoundEventArgs("Directory found.", directory.FullName));
 
                     if (_isSearchComplete)
                     {
@@ -109,71 +108,32 @@ namespace Project
 
         protected virtual void OnWorkStarted(object sender, WorkEventArgs e)
         {
-            if(WorkStarted != null)
-            {
-                WorkStarted(this, e);
-            }
+            WorkStarted?.Invoke(sender, e);
         }
 
         protected virtual void OnWorkFinished(object sender, WorkEventArgs e)
         {
-            if (WorkFinished != null)
-            {
-                WorkFinished(this, e);
-            }
+            WorkFinished?.Invoke(sender, e);
         }
 
         protected virtual void OnFileFound(object sender, FileFoundEventArgs e)
         {
-            if (FileFound != null)
-            {
-                FileFound(this, e);
-            }
+            FileFound?.Invoke(sender, e);
         }
 
-        protected virtual void OnDirectoryFound(object sender, FileFoundEventArgs e)
+        protected virtual void OnDirectoryFound(object sender, DirectoryFoundEventArgs e)
         {
-            if (DirectoryFound != null)
-            {
-                DirectoryFound(this, e);
-            }
+            DirectoryFound?.Invoke(sender, e);
         }
 
         protected virtual void OnFilteredFileFound(object sender, FileFoundEventArgs e)
         {
-            if (FilteredFileFound != null)
-            {
-                FilteredFileFound(this, e);
-            }
+            FilteredFileFound?.Invoke(sender, e);
         }
 
-        protected virtual void OnFilteredDirectoryFound(object sender, FileFoundEventArgs e)
+        protected virtual void OnFilteredDirectoryFound(object sender, DirectoryFoundEventArgs e)
         {
-            if (FilteredDirectoryFound != null)
-            {
-                FilteredDirectoryFound(this, e);
-            }
-        }
-    }
-
-    public class WorkEventArgs : EventArgs
-    {
-        public readonly string Message;
-
-        public WorkEventArgs(string message)
-        {
-            Message = message;
-        }
-    }
-
-    public class FileFoundEventArgs : WorkEventArgs
-    {
-        public readonly string FileName;
-
-        public FileFoundEventArgs(string message, string fileName)
-            :base(message)
-        {
-            FileName = fileName;
+            FilteredDirectoryFound?.Invoke(sender, e);
         }
     }
 }
