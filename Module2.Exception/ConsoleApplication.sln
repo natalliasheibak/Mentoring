@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exception.Task1", "ConsoleApplication\Exception.Task1.csproj", "{68006419-E30B-4220-B0AE-6B3B12AE69D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exception.Task2", "Exception.Task2\Exception.Task2.csproj", "{5096C055-18A0-4663-A759-903830D09E00}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Task2", "Test.Task2\Test.Task2.csproj", "{E7149639-6766-47B0-8D8F-035F4F1D1F39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{68006419-E30B-4220-B0AE-6B3B12AE69D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68006419-E30B-4220-B0AE-6B3B12AE69D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68006419-E30B-4220-B0AE-6B3B12AE69D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68006419-E30B-4220-B0AE-6B3B12AE69D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5096C055-18A0-4663-A759-903830D09E00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5096C055-18A0-4663-A759-903830D09E00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5096C055-18A0-4663-A759-903830D09E00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5096C055-18A0-4663-A759-903830D09E00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7149639-6766-47B0-8D8F-035F4F1D1F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7149639-6766-47B0-8D8F-035F4F1D1F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7149639-6766-47B0-8D8F-035F4F1D1F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7149639-6766-47B0-8D8F-035F4F1D1F39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
