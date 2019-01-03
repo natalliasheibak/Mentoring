@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IOrderRepository.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Exceptions\OrderIsNotAddedException.cs" />
+    <Compile Include="Exceptions\OrderIsNotDeletedException.cs" />
+    <Compile Include="Exceptions\OrderIsNotUpdatedException.cs" />
+    <Compile Include="Interfaces\IOrderRepository.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="OrderDetail.cs" />
     <Compile Include="OrderRepository.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
