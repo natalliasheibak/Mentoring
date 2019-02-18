@@ -1,0 +1,7 @@
+logparser "select * into MyLogTemp.log from Logger.log" -i:TSV -iSeparator:"|" -headerRow:OFF -o:TSV -headers:ON
+
+logparser "select Field1 as Date, Field2 as Number, Field3 as LogLevel, Field4 as Class, Field5 as Message into MyLogTemp1.log from MyLogTemp.log" -i:TSV -o:TSV -headers:ON
+
+logparser "select LogLevel, count(*) as NumberOfOccurences into FinalLog_LogLevels.log from MyLogTemp.log group by LogLevel" -i:TSV -o:TSV -headers:ON
+
+logparser "select distinct Message into FinalLog_Messages.log from MyLogTemp.log" -i:TSV -o:CSV -headers:ON
